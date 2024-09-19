@@ -34,7 +34,10 @@ class EmailTemplateResource extends Resource
 {
     protected static ?string $model = EmailTemplate::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-envelope';
+    public static function getNavigationIcon(): ?string
+    {
+        return config('filament-email-templates.navigation.templates.icon');
+    }
 
     public static function getNavigationGroup(): ?string
     {
