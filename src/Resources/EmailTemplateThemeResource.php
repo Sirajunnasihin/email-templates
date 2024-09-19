@@ -19,7 +19,10 @@ class EmailTemplateThemeResource extends Resource
 {
     protected static ?string $model = EmailTemplateTheme::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-paint-brush';
+    public static function getNavigationIcon(): ?string
+    {
+        return config('filament-email-templates.navigation.themes.icon');
+    }
 
     public static function getNavigationGroup(): ?string
     {
